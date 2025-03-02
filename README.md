@@ -14,18 +14,26 @@ https://blog.csdn.net/m0_45131654/article/details/121256885
 The basic robot platform is built based on the reference  [Paper](https://arxiv.org/abs/2003.01157) .
 
 ```
-conda create -n hrl_ci python=3.9.12 pip=23.0.1
+conda create -n hrl_ci python=3.8.18 pip=23.2.1
 conda activate hrl_ci
 pip install -r requirements.txt
 ```
 
 ## Inference
-We provide inference code in `run_inference.py` (from Line 222 - ) for both inference single image and inference a dataset (VITON-HD Test). You should modify the data path and run the following code. The generated results are provided in `examples/TestDreamBooth/GEN` for single image, and `VITONGEN` for VITON-HD Test.
 
 ```bash
-python run_inference.py
+roslaunch turtlebot_lidar turtlebot_world.launch 
 ```
-The inferenced results on VITON-Test would be like [garment, ground truth, generation].
+
+```bash
+rosrun simple_laserscan laserscan_simple
+```
+
+```bash
+conda activate hrl_ci
+cd /evaluation/eval_simulation
+python run_xxx_eval.py --save 0 --cuda 1 
+```
 
 
 
