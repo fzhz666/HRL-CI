@@ -20,6 +20,7 @@ pip install -r requirements.txt
 ```
 
 ## Inference
+You need to open three command terminals and execute the following commands in order
 
 ```bash
 roslaunch turtlebot_lidar turtlebot_world.launch 
@@ -32,30 +33,24 @@ rosrun simple_laserscan laserscan_simple
 ```bash
 conda activate hrl_ci
 cd /evaluation/eval_simulation
-python run_xxx_eval.py --save 0 --cuda 1 
+python run_inf_eval.py --save 0 --cuda 1 
 ```
 
 
 
 ## Train
+You need to open three command terminals and execute the following commands in order
 
-### Prepare datasets
-* Download the datasets that present in `/configs/datasets.yaml` and modify the corresponding paths.
-* You could prepare you own datasets according to the formates of files in `./datasets`.
-* If you use UVO dataset, you need to process the json following `./datasets/Preprocess/uvo_process.py`
-* You could refer to `run_dataset_debug.py` to verify you data is correct.
-
-### Prepare initial weight
-* If your would like to train from scratch, convert the downloaded SD weights to control copy by running:
 ```bash
-sh ./scripts/convert_weight.sh  
+roslaunch turtlebot_lidar turtlebot_world_train.launch 
 ```
-### Start training
-* Modify the training hyper-parameters in `run_train_anydoor.py` Line 26-34 according to your training resources. We verify that using 2-A100 GPUs with batch accumulation=1 could get satisfactory results after 300,000 iterations.
 
-
-* Start training by executing: 
 ```bash
-sh ./scripts/train.sh  
+rosrun simple_laserscan laserscan_simple
 ```
+
+```bash
+conda activate hrl_ci
+cd /training/train_phddpg
+python train_meta_disappear_step_change.py
 
