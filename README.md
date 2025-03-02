@@ -13,6 +13,7 @@ https://blog.csdn.net/m0_45131654/article/details/121256885
 
 The basic robot platform is built based on the reference paper.
 https://ieeexplore.ieee.org/document/9340948?denied=
+ [Paper](https://arxiv.org/abs/2003.01157) 
 
 ```
 conda create -n hrl_ci python=3.9.12 pip=23.0.1
