@@ -8,6 +8,8 @@ This is a navigation task for  mapless moving target navigation with communicati
 
 ## Dependencies
 
+The code running environment is based on the Ubuntu 18.04 system, relying on the ROS 1 (Robot Operating System 1) framework, and using the Gazebo simulation platform to carry out related work.
+
 First, go to this link and follow the tutorial to build the robot platform environment. 
 https://blog.csdn.net/m0_45131654/article/details/121256885
 
