@@ -7,6 +7,10 @@ This is a navigation task for  mapless moving target navigation with communicati
 
 
 ## Dependencies
+
+First, go to this link and follow the tutorial to build the robot platform environment. 
+https://blog.csdn.net/m0_45131654/article/details/121256885
+
 ```
 conda create -n hrl_ci python=3.9.12 pip=23.0.1
 conda activate hrl_ci
