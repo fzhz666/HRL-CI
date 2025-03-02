@@ -19,6 +19,11 @@ conda activate hrl_ci
 pip install -r requirements.txt
 ```
 
+## Code Availability
+
+More source code for HRL-CI is being prepared. We will release the code as soon as the relevant paper is published. Please stay tuned for updates!
+
+
 ## Inference
 You need to open three command terminals and execute the following commands in order
 
